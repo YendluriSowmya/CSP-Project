@@ -1,0 +1,26 @@
+const express = require('express');
+const bodyparser = require('body-parser');
+const cors = require('cors');
+const Students10 = require('./Routes/Students10');
+const Science = require('./Routes/Science');
+const Chemistry = require('./Routes/Chemistry');
+const registration1 = require('./Routes/registration1');
+const biology = require('./Routes/biology');
+const contactus = require('./Routes/contactus');
+const logging = require('./Routes/logging');
+const maths = require('./Routes/maths');
+//const Teachers = require('./Routes/Teachers')
+const app = express();
+app.use(cors());
+app.use(bodyparser.urlencoded({ extended :  true}));
+app.use(bodyparser.json());
+app.use('/Students10',Students10);
+app.use('/Science', Science);
+app.use('/Chemistry',Chemistry);
+app.use('/registration1',registration1);
+app.use('/biology', biology);
+app.use('/contactus', contactus);
+app.use('/lologging',logging);
+app.use('/maths', maths);
+//app.use('/Teachers', Teachers);
+module.exports = app;       
